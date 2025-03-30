@@ -28,19 +28,20 @@ lazy val root = (project in file("."))
     semanticdbVersion := scalafixSemanticdb.revision,
     scalacOptions := {
       scalaBinaryVersion.value match {
-        case "2.12" => Seq("-Xsource:3", "-Xfatal-warnings", "-unchecked", "-deprecation", "-feature", "-language:implicitConversions")
+        case "2.12" | "2.13" => Seq("-Xsource:3", "-Xfatal-warnings", "-unchecked", "-deprecation", "-feature", "-language:implicitConversions")
         case _      => Seq("-Vdebug")
       }
     },
     (pluginCrossBuild / sbtVersion) := {
       scalaBinaryVersion.value match {
         case "2.12" => "1.5.8"
+        case "2.13" => "1.9.7"
         case _      => "2.0.0-M4"
       }
     },
     scriptedSbt := {
       scalaBinaryVersion.value match {
-        case "2.12" => "1.10.7"
+        case "2.12" | "2.13" => "1.10.7"
         case _      => "2.0.0-M4"
       }
     },
