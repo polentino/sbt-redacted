@@ -20,6 +20,24 @@ inThisBuild(
   )
 )
 
+lazy val checkStatus = taskKey[Unit]("Fail build if CI_BUILD is not set & version suffix contains `-SNAPSHOT`")
+
+checkStatus := {
+  val isCiBuild = sys.env.contains("CI_BUILD")
+  val isSnapshot = version.value.endsWith("-SNAPSHOT")
+
+  // xor would be more concise, but having expressive log message is better
+  val errorMessage = (isCiBuild, isSnapshot) match {
+    case (true, true) => Some("when running from a CI build pipeline, version cannot be `xyz-SNAPSHOT`.")
+    case (false, false) => Some("when running from locally, the version must be `xyz-SNAPSHOT`.")
+    case _ => None
+  }
+
+  errorMessage.fold(Unit){ msg =>
+    sys.error(s"""⚠️ Invalid status: $msg""".stripMargin)
+  }
+}
+
 lazy val root = (project in file("."))
   .enablePlugins(SbtPlugin)
   .settings(
@@ -48,6 +66,6 @@ lazy val root = (project in file("."))
     scriptedBufferLog := false
   )
 
-addCommandAlias("fmt", "; scalafix; scalafmtAll; scalafmtSbt")
-addCommandAlias("fmtCheck", "; scalafmtCheckAll ; scalafmtSbtCheck")
-addCommandAlias("crossReleaseAll", "; clean; +publishSigned; sonatypeBundleRelease")
+addCommandAlias("fmt", "; checkStatus; scalafix; scalafmtAll; scalafmtSbt")
+addCommandAlias("fmtCheck", "; checkStatus; scalafmtCheckAll ; scalafmtSbtCheck")
+addCommandAlias("crossReleaseAll", "; checkStatus; clean; +publishSigned; sonatypeBundleRelease")
