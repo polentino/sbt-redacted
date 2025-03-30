@@ -1,4 +1,4 @@
-ThisBuild / crossScalaVersions := Seq("2.12.20", "3.6.4")
+ThisBuild / crossScalaVersions := Seq("2.12.20", "2.13.16", "3.6.4")
 ThisBuild / sbtPlugin := true
 ThisBuild / scalaVersion := crossScalaVersions.value.head
 
