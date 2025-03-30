@@ -66,10 +66,6 @@ jobs:
           - os: ubuntu-latest
             java: 8
             distribution: zulu
-            scala: 2.13.x
-          - os: ubuntu-latest
-            java: 8
-            distribution: zulu
             scala: 3.x
     runs-on: ${{ matrix.os }}
     env:
