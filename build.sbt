@@ -62,7 +62,7 @@ lazy val root = (project in file("."))
         case _      => "2.0.0-M4"
       }
     },
-    scripted := Def.sequential(checkStatus, scripted.toTask("")).value,
+    scripted := scripted.dependsOn(checkStatus).evaluated,
     scriptedLaunchOpts := scriptedLaunchOpts.value ++ Seq("-Xmx1024M", "-Dplugin.version=" + version.value),
     scriptedBufferLog := false
   )
