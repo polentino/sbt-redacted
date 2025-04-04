@@ -1,4 +1,6 @@
-todo insert badges
+![Actions Status](https://github.com/polentino/sbt-redacted/actions/workflows/ci.yml/badge.svg)
+![GitHub Tag](https://img.shields.io/github/v/tag/polentino/sbt-redacted?sort=semver&label=Latest%20Tag&color=limegreen)
+
 
 # sbt-redacted
 
@@ -22,7 +24,7 @@ lazy val root = (project in file("."))
   .setting(
     redactedVersion := "0.7.1"
     // your usual config goes here
-)
+  )
 ```
 
 That's it! You can now start using [redacted](https://github.com/polentino/redacted) in your project :tada:
