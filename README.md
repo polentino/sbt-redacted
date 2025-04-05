@@ -13,7 +13,7 @@ in your sbt build.
 In your `project/plugins.sbt` add the following line
 
 ```scala
-addSbtPlugin("io.github.polentino" % "sbt-redacted" % "0.1.0")
+addSbtPlugin("io.github.polentino" % "sbt-redacted" % "1.0.0")
 ```
 
 and then enable it in your specific (sub)project in `build.sbt` like so
