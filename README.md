@@ -1,12 +1,12 @@
 ![Actions Status](https://github.com/polentino/sbt-redacted/actions/workflows/ci.yml/badge.svg)
 ![GitHub Tag](https://img.shields.io/github/v/tag/polentino/sbt-redacted?sort=semver&label=Latest%20Tag&color=limegreen)
 
-
 # sbt-redacted
 
 [sbt](https://www.scala-sbt.org/) plugin to add and configure [redacted](https://github.com/polentino/redacted) compiler
-plugin and annotation library
-in your sbt build.
+plugin and annotation library in your sbt build.
+
+![Simple example of sbt-redacted usage](demo/example.gif "Sample usage of sbt-redacted")
 
 ## How to install
 
