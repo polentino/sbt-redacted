@@ -1,3 +1,13 @@
+## [1.0.1](https://github.com/polentino/sbt-redacted/compare/v1.0.0...v1.0.1) (2025-04-06)
+
+### 📖 Docs
+
+* added badges to README.md ([69de0be](https://github.com/polentino/sbt-redacted/commit/69de0be7ddc604c0ab0c4f575775a22c695530d0))
+
+### 🩹 Fixes
+
+* default to `0.7.1` ([d861f82](https://github.com/polentino/sbt-redacted/commit/d861f8200522bc618e56b36a53bd558fb56705ae))
+
 ## [1.0.0](https://github.com/polentino/sbt-redacted/compare/...v1.0.0) (2025-04-04)
 
 ### 🩹 Fixes
