@@ -1,3 +1,13 @@
+## [1.1.0](https://github.com/polentino/sbt-redacted/compare/v1.0.1...v1.1.0) (2025-04-07)
+
+### 📖 Docs
+
+* added gif example ([d139401](https://github.com/polentino/sbt-redacted/commit/d139401c5c94dfaa07af2b51fc774ec7c8e1f866))
+
+### ✨ Features
+
+* do not assign a default value ([099b467](https://github.com/polentino/sbt-redacted/commit/099b46704a0efaf622f1d623a507ff1d40b7201c))
+
 ## [1.0.1](https://github.com/polentino/sbt-redacted/compare/v1.0.0...v1.0.1) (2025-04-06)
 
 ### 📖 Docs
