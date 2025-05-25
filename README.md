@@ -48,3 +48,11 @@ Once you modified `version.sbt` to include a `-SNAPSHOT` suffix, you can execute
 > sbt scripted
 
 to execute the local installation & tests execution of the plugin.
+
+---
+
+# Adopters
+
+Here below you'll find a list of companies using `redacted` in their product(s)
+
+Want to see your company here? [Fork the repo and submit a PR](https://github.com/polentino/sbt-redacted/fork)!
