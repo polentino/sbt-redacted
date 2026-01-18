@@ -3,6 +3,7 @@
 
 # sbt-redacted
 
+
 [sbt](https://www.scala-sbt.org/) plugin to add and configure [redacted](https://github.com/polentino/redacted) compiler
 plugin and annotation library in your sbt build.
 
