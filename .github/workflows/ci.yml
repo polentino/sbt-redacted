@@ -58,7 +58,7 @@ jobs:
           - os: macos-latest
             java: 8
             distribution: zulu
-            scala: 3.x
+            scala: 3.7.4
           - os: ubuntu-latest
             java: 8
             distribution: zulu
@@ -66,7 +66,7 @@ jobs:
           - os: ubuntu-latest
             java: 8
             distribution: zulu
-            scala: 3.x
+            scala: 3.7.4
     runs-on: ${{ matrix.os }}
     env:
       JAVA_OPTS: -Xms800M -Xmx2G -Xss2M -XX:ReservedCodeCacheSize=128M -Dfile.encoding=UTF-8
