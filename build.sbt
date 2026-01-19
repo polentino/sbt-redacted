@@ -53,13 +53,13 @@ lazy val root = (project in file("."))
     (pluginCrossBuild / sbtVersion) := {
       scalaBinaryVersion.value match {
         case "2.12" => "1.5.8"
-        case _      => "2.0.0-RC4"
+        case _      => "2.0.0-RC8"
       }
     },
     scriptedSbt := {
       scalaBinaryVersion.value match {
         case "2.12" => "1.10.7"
-        case _      => "2.0.0-RC4"
+        case _      => "2.0.0-RC8"
       }
     },
     scripted := scripted.dependsOn(checkStatus).evaluated,
