@@ -1,3 +1,13 @@
+## [1.1.1](https://github.com/polentino/sbt-redacted/compare/v1.1.0...v1.1.1) (2026-01-25)
+
+### 📖 Docs
+
+* added `Adopters` section ([773cd7e](https://github.com/polentino/sbt-redacted/commit/773cd7eb1c2bec5af7ba09e4d2cd3865bde9fafa))
+
+### 🩹 Fixes
+
+* new plugin release ([df4ac21](https://github.com/polentino/sbt-redacted/commit/df4ac211986bcd5ca9c4895de6cec17948844520))
+
 ## [1.1.0](https://github.com/polentino/sbt-redacted/compare/v1.0.1...v1.1.0) (2025-04-07)
 
 ### 📖 Docs
