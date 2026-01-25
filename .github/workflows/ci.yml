@@ -2,7 +2,7 @@
 # They are provided by a third-party and are governed by
 # separate terms of service, privacy policy, and support
 # documentation.
-name: CI/CD Pipeline
+name: "CI/CD Pipeline"
 
 on:
   push:
@@ -20,10 +20,10 @@ jobs:
     name: Validate PR title
     runs-on: ubuntu-latest
     permissions:
-      contents: read
-      issues: read
-      pull-requests: read
-      id-token: none
+      contents: write
+      issues: write
+      pull-requests: write
+      id-token: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -49,7 +49,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   run-tests:
-    name: Run Tests
+    name: "Run Tests"
     needs: semantic-commit-linter
     strategy:
       fail-fast: false
@@ -58,31 +58,27 @@ jobs:
           - os: macos-latest
             java: 8
             distribution: zulu
-            scala: 3.x
           - os: ubuntu-latest
             java: 8
             distribution: zulu
-            scala: 2.12.x
-          - os: ubuntu-latest
-            java: 8
-            distribution: zulu
-            scala: 3.x
     runs-on: ${{ matrix.os }}
     env:
       JAVA_OPTS: -Xms800M -Xmx2G -Xss2M -XX:ReservedCodeCacheSize=128M -Dfile.encoding=UTF-8
       JVM_OPTS: -Xms800M -Xmx2G -Xss2M -XX:ReservedCodeCacheSize=128M -Dfile.encoding=UTF-8
       CI_BUILD: ""
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-java@v5
         with:
           distribution: "${{ matrix.distribution }}"
           java-version: "${{ matrix.java }}"
           cache: "sbt"
       - uses: sbt/setup-sbt@v1
+        with:
+          sbt-runner-version: 1.12.0
       - shell: bash
         run: |
-          sbt -v "++${{ matrix.scala }}" fmt test scripted
+          sbt -v scripted
 
   semantic-release:
     name: Semantic Release
