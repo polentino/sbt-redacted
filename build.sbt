@@ -1,4 +1,4 @@
-ThisBuild / crossScalaVersions := Seq("2.12.20", "3.6.4")
+ThisBuild / crossScalaVersions := Seq("2.12.20", "3.7.4")
 ThisBuild / sbtPlugin := true
 ThisBuild / scalaVersion := crossScalaVersions.value.head
 
@@ -69,4 +69,4 @@ lazy val root = (project in file("."))
 
 addCommandAlias("fmt", "; checkStatus; scalafix; scalafmtAll; scalafmtSbt")
 addCommandAlias("fmtCheck", "; checkStatus; scalafmtCheckAll ; scalafmtSbtCheck")
-addCommandAlias("crossReleaseAll", "; checkStatus; clean; +publishSigned; sonatypeBundleRelease")
+addCommandAlias("crossReleaseAll", "; checkStatus; clean; +publishSigned; sonaUpload; sonaRelease")
