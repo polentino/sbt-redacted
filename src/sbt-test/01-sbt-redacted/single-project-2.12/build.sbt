@@ -9,7 +9,7 @@ val scalaCheckVersion = "3.2.17.0"
 lazy val root = (project in file("."))
   .enablePlugins(RedactedPlugin)
   .settings(
-    redactedVersion := "0.9.9",
+    redactedVersion := "0.10.0-SNAPSHOT",
     version := "0.1",
     publish / skip := true,
     libraryDependencies ++= Seq(

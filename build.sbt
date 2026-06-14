@@ -29,7 +29,7 @@ checkStatus := {
   // xor would be more concise, but having expressive log message is better
   val errorMessage = (isCiBuild, isSnapshot) match {
     case (true, true) => Some("when running from a CI build pipeline, version cannot be `xyz-SNAPSHOT`.")
-    case (false, false) => Some("when running from locally, the version must be `xyz-SNAPSHOT`.")
+    case (false, false) => Some("when running locally, the version must be `xyz-SNAPSHOT`.")
     case _ => None
   }
 
@@ -41,6 +41,7 @@ checkStatus := {
 lazy val root = (project in file("."))
   .enablePlugins(SbtPlugin)
   .settings(
+    addSbtPlugin("org.portable-scala" % "sbt-platform-deps" % "1.0.2"),
     name := "sbt-redacted",
     semanticdbEnabled := true,
     semanticdbVersion := scalafixSemanticdb.revision,
