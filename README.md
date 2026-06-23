@@ -4,7 +4,8 @@
 # sbt-redacted
 
 [sbt](https://www.scala-sbt.org/) plugin to add and configure [redacted](https://github.com/polentino/redacted) compiler
-plugin and annotation library in your sbt build.
+plugin and annotation library in your sbt build, for regular Scala applications on the JVM, as well as Scala JS and
+Scala Native.
 
 ![Simple example of sbt-redacted usage](demo/example.gif "Sample usage of sbt-redacted")
 
@@ -20,9 +21,9 @@ and then enable it in your specific (sub)project in `build.sbt` like so
 
 ```scala
 lazy val root = (project in file("."))
-  .enablePlugins(RedactedPlugin)
+  .enablePlugins(RedactedPlugin) // if you're targeting scala js/native, you'd need also their corresponding plugins
   .setting(
-    redactedVersion := "0.9.9"
+    redactedVersion := "0.10.0"
     // your usual config goes here
   )
 ```
