@@ -28,12 +28,12 @@ checkStatus := {
 
   // xor would be more concise, but having expressive log message is better
   val errorMessage = (isCiBuild, isSnapshot) match {
-    case (true, true) => Some("when running from a CI build pipeline, version cannot be `xyz-SNAPSHOT`.")
+    case (true, true)   => Some("when running from a CI build pipeline, version cannot be `xyz-SNAPSHOT`.")
     case (false, false) => Some("when running locally, the version must be `xyz-SNAPSHOT`.")
-    case _ => None
+    case _              => None
   }
 
-  errorMessage.fold(Unit){ msg =>
+  errorMessage.fold(Unit) { msg =>
     sys.error(s"""⚠️ Invalid status: $msg""".stripMargin)
   }
 }
@@ -46,8 +46,14 @@ lazy val root = (project in file("."))
     semanticdbVersion := scalafixSemanticdb.revision,
     scalacOptions := {
       scalaBinaryVersion.value match {
-        case "2.12" => Seq("-Xsource:3", "-Xfatal-warnings", "-unchecked", "-deprecation", "-feature", "-language:implicitConversions")
-        case _      => Seq("-Vdebug")
+        case "2.12" => Seq(
+            "-Xsource:3",
+            "-Xfatal-warnings",
+            "-unchecked",
+            "-deprecation",
+            "-feature",
+            "-language:implicitConversions")
+        case _ => Seq("-Vdebug")
       }
     },
     (pluginCrossBuild / sbtVersion) := {
