@@ -41,7 +41,6 @@ checkStatus := {
 lazy val root = (project in file("."))
   .enablePlugins(SbtPlugin)
   .settings(
-    addSbtPlugin("org.portable-scala" % "sbt-platform-deps" % "1.0.2"),
     name := "sbt-redacted",
     semanticdbEnabled := true,
     semanticdbVersion := scalafixSemanticdb.revision,
@@ -53,14 +52,25 @@ lazy val root = (project in file("."))
     },
     (pluginCrossBuild / sbtVersion) := {
       scalaBinaryVersion.value match {
-        case "2.12" => "1.5.8"
-        case _      => "2.0.0-RC8"
+        case "2.12" => "1.10.7"
+        case _      => "2.0.0"
       }
     },
     scriptedSbt := {
       scalaBinaryVersion.value match {
         case "2.12" => "1.10.7"
-        case _      => "2.0.0-RC8"
+        case _      => "2.0.0"
+      }
+    },
+    // sbt-platform-deps is only needed for sbt 1.x (Scala 2.12/2.13)
+    // https://www.scala-sbt.org/2.x/docs/en/changes/migrating-from-sbt-1.x.html#changes-to-
+    libraryDependencies ++= {
+      if (scalaBinaryVersion.value == "2.12") {
+        val sbtBinV = (pluginCrossBuild / sbtBinaryVersion).value
+        val scalaBinV = scalaBinaryVersion.value
+        Seq(Defaults.sbtPluginExtra("org.portable-scala" % "sbt-platform-deps" % "1.0.2", sbtBinV, scalaBinV))
+      } else {
+        Seq.empty
       }
     },
     scripted := scripted.dependsOn(checkStatus).evaluated,
