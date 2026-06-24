@@ -1,3 +1,9 @@
+## [1.3.0](https://github.com/polentino/sbt-redacted/compare/v1.2.2...v1.3.0) (2026-06-24)
+
+### ✨ Features
+
+* scala 2.x needs "sbt-platform-deps", scala 3 doesnt' ([#13](https://github.com/polentino/sbt-redacted/issues/13)) ([84a995b](https://github.com/polentino/sbt-redacted/commit/84a995b8cfb1c9265d7efa9ec7e7330e69e101a3))
+
 ## [1.2.2](https://github.com/polentino/sbt-redacted/compare/v1.2.1...v1.2.2) (2026-06-24)
 
 ### 🩹 Fixes
