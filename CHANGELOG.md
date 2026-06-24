@@ -1,3 +1,9 @@
+## [1.2.0](https://github.com/polentino/sbt-redacted/compare/v1.1.1...v1.2.0) (2026-06-24)
+
+### ✨ Features
+
+* scala js / scala native support ([af79f81](https://github.com/polentino/sbt-redacted/commit/af79f81d4e1f42a11a58002ababac12627859bc9))
+
 ## [1.1.1](https://github.com/polentino/sbt-redacted/compare/v1.1.0...v1.1.1) (2026-01-25)
 
 ### 📖 Docs
