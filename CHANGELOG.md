@@ -1,3 +1,9 @@
+## [1.2.2](https://github.com/polentino/sbt-redacted/compare/v1.2.1...v1.2.2) (2026-06-24)
+
+### 🩹 Fixes
+
+* sbt 2.x needs scala 3.8 ([c153c95](https://github.com/polentino/sbt-redacted/commit/c153c95fb5ee9a4e8f2fdbac7c0ad690d1f48172))
+
 ## [1.2.1](https://github.com/polentino/sbt-redacted/compare/v1.2.0...v1.2.1) (2026-06-24)
 
 ### 🩹 Fixes
