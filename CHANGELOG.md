@@ -1,3 +1,9 @@
+## [1.2.1](https://github.com/polentino/sbt-redacted/compare/v1.2.0...v1.2.1) (2026-06-24)
+
+### 🩹 Fixes
+
+* fix publishing ([#12](https://github.com/polentino/sbt-redacted/issues/12)) ([2b4bbda](https://github.com/polentino/sbt-redacted/commit/2b4bbda694e0b587d6da2f33ea38a750fa8f43fe))
+
 ## [1.2.0](https://github.com/polentino/sbt-redacted/compare/v1.1.1...v1.2.0) (2026-06-24)
 
 ### ✨ Features
