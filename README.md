@@ -14,14 +14,19 @@ Scala Native.
 In your `project/plugins.sbt` add the following line
 
 ```scala
-addSbtPlugin("io.github.polentino" % "sbt-redacted" % "1.2.1")
+addSbtPlugin("io.github.polentino" % "sbt-redacted" % "1.3.0")
+// if targeting scala js / native, you'd also need
+//addSbtPlugin("org.scala-native" % "sbt-scala-native" % "0.5.12") or
+//addSbtPlugin("org.scala-js" % "sbt-scalajs" % "1.21.0")
 ```
 
 and then enable it in your specific (sub)project in `build.sbt` like so
 
 ```scala
 lazy val root = (project in file("."))
-  .enablePlugins(RedactedPlugin) // if you're targeting scala js/native, you'd need also their corresponding plugins
+  .enablePlugins(RedactedPlugin)
+  // if you're targeting scala js / native, you'd need also their corresponding plugins here
+  //.enablePlugins(RedactedPlugin, ScalaJSPlugin)
   .setting(
     redactedVersion := "0.10.0"
     // your usual config goes here
