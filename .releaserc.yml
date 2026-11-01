@@ -97,6 +97,8 @@ generateNotes:
         - type: test
           section: ✅ Tests
           hidden: false
+        - type: chore
+          section: 🧹 Chores
 
 # Responsible for preparing the release.
 prepare:
